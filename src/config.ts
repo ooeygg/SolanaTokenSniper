@@ -1,4 +1,63 @@
 export const config = {
+  pump_fun_strategy: {
+    enabled: true,
+    minimum_sol_balance: 0.1,
+    rsi: {
+      period: 14,
+      oversold: 30,
+      overbought: 70
+    },
+    macd: {
+      fast_period: 12,
+      slow_period: 26,
+      signal_period: 9,
+      buy_threshold: 0.02,
+      sell_threshold: -0.02
+    },
+    moving_average: {
+      short_period: 10,
+      long_period: 21
+    },
+    volume_profile: {
+      buy_pressure_threshold: 0.6,
+      sell_pressure_threshold: 0.4
+    },
+    market_depth: {
+      min_bid_ask_ratio: 1.2
+    },
+    profit_target_percentage: 5,
+    stop_loss_percentage: 2,
+    max_concurrent_trades: 3,
+    price_check_interval: 5000
+  },
+  hft_strategy: {
+    enabled: false,
+    minimum_sol_balance: 0.1,
+    rsi: {
+      period: 14,
+      oversold: 30,
+      overbought: 70
+    },
+    macd: {
+      fast_period: 12,
+      slow_period: 26,
+      signal_period: 9,
+      buy_threshold: 0.02,
+      sell_threshold: -0.02
+    },
+    moving_average: {
+      short_period: 10,
+      long_period: 21
+    },
+    volume_profile: {
+      buy_pressure_threshold: 0.6,
+      sell_pressure_threshold: 0.4
+    },
+    profit_target_percentage: 5,
+    stop_loss_percentage: 2,
+    max_concurrent_trades: 3,
+    price_check_interval: 5000 // ms
+  },
   liquidity_pool: {
     radiyum_program_id: "675kPX9MHTjS2zt1qfr1NYHuzeLXfQM9H24wFSUt1Mp8",
     wsol_pc_mint: "So11111111111111111111111111111111111111112",
@@ -26,8 +85,8 @@ export const config = {
     prio_fee_max_lamports: 1000000, // 0.001 SOL
     prio_level: "veryHigh", // If you want to land transaction fast, set this to use `veryHigh`. You will pay on average higher priority fee.
     slippageBps: "200", // 2%
-    auto_sell: false, // If set to true, stop loss and take profit triggers automatically when set.
-    stop_loss_percent: 5,
+    auto_sell: true, // If set to true, stop loss and take profit triggers automatically when set.
+    stop_loss_percent: 15,
     take_profit_percent: 50,
     track_public_wallet: "", // If set an additional log line will be shown with a link to track your wallet
   },
