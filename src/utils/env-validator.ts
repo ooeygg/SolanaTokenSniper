@@ -57,7 +57,7 @@ export function validateEnv(): EnvConfig {
     }
   };
 
-  validateUrl("HELIUS_HTTPS_URI", "https:", true);
+  // validateUrl("HELIUS_HTTPS_URI", "http:", false);
   validateUrl("HELIUS_WSS_URI", "wss:", true);
   validateUrl("HELIUS_HTTPS_URI_TX", "https:", true);
   validateUrl("JUP_HTTPS_QUOTE_URI", "https:");
